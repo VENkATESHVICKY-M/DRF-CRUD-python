@@ -1,0 +1,27 @@
+crud operation-----
+
+
+verbose name-------
+
+
+TRUE_FALSE_CHOICES = (
+    (True, 'Yes'),
+    (False, 'No')
+)
+class MyModelForm(forms.ModelForm):
+    class Meta:
+        model = MyModel
+        fields = ('attending',)
+        widgets = {
+            'attending': forms.Select(choices=TRUE_FALSE_CHOICES)
+        }
+
+
+
+TRUE_FALSE_CHOICES = (
+    (True, 'Yes'),
+    (False, 'No')
+)
+
+boolfield = forms.ChoiceField(choices = TRUE_FALSE_CHOICES, label="Some Label", 
+                              initial='', widget=forms.Select(), required=True)
